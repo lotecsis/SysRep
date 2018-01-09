@@ -1,0 +1,182 @@
+﻿	<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+		<PropertyGroup>
+			<ProjectGuid>{606D6F47-41B7-4914-AB04-95BA5A703DB3}</ProjectGuid>
+			<ProjectVersion>12.0</ProjectVersion>
+			<MainSource>PSysRep.dpr</MainSource>
+			<Config Condition="'$(Config)'==''">Debug</Config>
+			<DCC_DCCCompiler>DCC32</DCC_DCCCompiler>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Config)'=='Release' or '$(Cfg_1)'!=''">
+			<Cfg_1>true</Cfg_1>
+			<CfgParent>Base</CfgParent>
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Config)'=='Debug' or '$(Cfg_2)'!=''">
+			<Cfg_2>true</Cfg_2>
+			<CfgParent>Base</CfgParent>
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Base)'!=''">
+			<DCC_UnitAlias>WinTypes=Windows;WinProcs=Windows;DbiTypes=BDE;DbiProcs=BDE;DbiErrs=BDE;$(DCC_UnitAlias)</DCC_UnitAlias>
+			<DCC_DependencyCheckOutputName>PSysRep.exe</DCC_DependencyCheckOutputName>
+			<DCC_ImageBase>00400000</DCC_ImageBase>
+			<DCC_Platform>x86</DCC_Platform>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Cfg_1)'!=''">
+			<DCC_LocalDebugSymbols>false</DCC_LocalDebugSymbols>
+			<DCC_Define>RELEASE;$(DCC_Define)</DCC_Define>
+			<DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
+			<DCC_DebugInformation>false</DCC_DebugInformation>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Cfg_2)'!=''">
+			<DCC_Define>DEBUG;$(DCC_Define)</DCC_Define>
+		</PropertyGroup>
+		<ItemGroup>
+			<DelphiCompile Include="PSysRep.dpr">
+				<MainSource>MainSource</MainSource>
+			</DelphiCompile>
+			<DCCReference Include="UPrincipal.pas">
+				<Form>FPrincipal</Form>
+			</DCCReference>
+			<DCCReference Include="UDm1.pas">
+				<Form>Dm1</Form>
+				<DesignClass>TDataModule</DesignClass>
+			</DCCReference>
+			<DCCReference Include="ULogin.pas">
+				<Form>FLogin</Form>
+			</DCCReference>
+			<DCCReference Include="UConfig.pas">
+				<Form>FConfig</Form>
+			</DCCReference>
+			<DCCReference Include="UAtualiza.pas">
+				<Form>FAtualiza</Form>
+			</DCCReference>
+			<DCCReference Include="UPedido.pas">
+				<Form>FPedido</Form>
+			</DCCReference>
+			<DCCReference Include="UConsGeral.pas">
+				<Form>FConsGeral</Form>
+			</DCCReference>
+			<DCCReference Include="UAddProdPed.pas">
+				<Form>FAddProdPed</Form>
+			</DCCReference>
+			<DCCReference Include="UConsDerivacao.pas">
+				<Form>FConsDerivacao</Form>
+			</DCCReference>
+			<DCCReference Include="UAddCorProdPed.pas">
+				<Form>FAddCorProdPed</Form>
+			</DCCReference>
+			<DCCReference Include="UConsCoresProdPed.pas">
+				<Form>FConsCoresProdPed</Form>
+			</DCCReference>
+			<DCCReference Include="UObsPed.pas">
+				<Form>FObsPed</Form>
+			</DCCReference>
+			<DCCReference Include="UEnviaPedidos.pas">
+				<Form>FEnviaPedidos</Form>
+			</DCCReference>
+			<DCCReference Include="UConsultaPedido.pas">
+				<Form>FConsultaPedido</Form>
+			</DCCReference>
+			<DCCReference Include="UDmOra.pas">
+				<Form>DmOra</Form>
+				<DesignClass>TDataModule</DesignClass>
+			</DCCReference>
+			<DCCReference Include="UAcompanhamentoPedidos.pas">
+				<Form>FAcompanhamentoPedidos</Form>
+			</DCCReference>
+			<DCCReference Include="UResumoPreCargas.pas">
+				<Form>FResumoPreCargas</Form>
+			</DCCReference>
+			<DCCReference Include="UDmRave.pas">
+				<Form>DmRave</Form>
+				<DesignClass>TDataModule</DesignClass>
+			</DCCReference>
+			<DCCReference Include="UInformacoesClientes.pas">
+				<Form>FInformacoesClientes</Form>
+			</DCCReference>
+			<DCCReference Include="URelacaoCobranca.pas">
+				<Form>FRelacaoCobranca</Form>
+			</DCCReference>
+			<DCCReference Include="UVisuTabPreco.pas">
+				<Form>FVisuTabPreco</Form>
+			</DCCReference>
+			<DCCReference Include="UDmR.pas">
+				<Form>DmR</Form>
+				<DesignClass>TDataModule</DesignClass>
+			</DCCReference>
+			<DCCReference Include="UDmFireRep.pas">
+				<Form>DmFireRep</Form>
+				<DesignClass>TDataModule</DesignClass>
+			</DCCReference>
+			<DCCReference Include="UAcompanhaPedidosOnline.pas">
+				<Form>FAcompanhaPedidosOnline</Form>
+			</DCCReference>
+			<DCCReference Include="UItensPedido.pas">
+				<Form>FItensPedido</Form>
+			</DCCReference>
+			<BuildConfiguration Include="Base">
+				<Key>Base</Key>
+			</BuildConfiguration>
+			<BuildConfiguration Include="Debug">
+				<Key>Cfg_2</Key>
+				<CfgParent>Base</CfgParent>
+			</BuildConfiguration>
+			<BuildConfiguration Include="Release">
+				<Key>Cfg_1</Key>
+				<CfgParent>Base</CfgParent>
+			</BuildConfiguration>
+		</ItemGroup>
+		<Import Project="$(BDS)\Bin\CodeGear.Delphi.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Delphi.Targets')"/>
+		<ProjectExtensions>
+			<Borland.Personality>Delphi.Personality.12</Borland.Personality>
+			<Borland.ProjectType/>
+			<BorlandProject>
+				<Delphi.Personality>
+					<Source>
+						<Source Name="MainSource">PSysRep.dpr</Source>
+					</Source>
+					<Parameters>
+						<Parameters Name="UseLauncher">False</Parameters>
+						<Parameters Name="LoadAllSymbols">True</Parameters>
+						<Parameters Name="LoadUnspecifiedSymbols">False</Parameters>
+					</Parameters>
+					<VersionInfo>
+						<VersionInfo Name="IncludeVerInfo">True</VersionInfo>
+						<VersionInfo Name="AutoIncBuild">False</VersionInfo>
+						<VersionInfo Name="MajorVer">6</VersionInfo>
+						<VersionInfo Name="MinorVer">0</VersionInfo>
+						<VersionInfo Name="Release">0</VersionInfo>
+						<VersionInfo Name="Build">0</VersionInfo>
+						<VersionInfo Name="Debug">True</VersionInfo>
+						<VersionInfo Name="PreRelease">True</VersionInfo>
+						<VersionInfo Name="Special">False</VersionInfo>
+						<VersionInfo Name="Private">False</VersionInfo>
+						<VersionInfo Name="DLL">True</VersionInfo>
+						<VersionInfo Name="Locale">1046</VersionInfo>
+						<VersionInfo Name="CodePage">1252</VersionInfo>
+					</VersionInfo>
+					<VersionInfoKeys>
+						<VersionInfoKeys Name="CompanyName"/>
+						<VersionInfoKeys Name="FileDescription"/>
+						<VersionInfoKeys Name="FileVersion">6.0.0.0</VersionInfoKeys>
+						<VersionInfoKeys Name="InternalName"/>
+						<VersionInfoKeys Name="LegalCopyright"/>
+						<VersionInfoKeys Name="LegalTrademarks"/>
+						<VersionInfoKeys Name="OriginalFilename"/>
+						<VersionInfoKeys Name="ProductName"/>
+						<VersionInfoKeys Name="ProductVersion">1.0.0.0</VersionInfoKeys>
+						<VersionInfoKeys Name="Comments"/>
+					</VersionInfoKeys>
+					<Excluded_Packages>
+						<Excluded_Packages Name="$(BDS)\bin\dcloffice2k140.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
+						<Excluded_Packages Name="$(BDS)\bin\dclofficexp140.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
+					</Excluded_Packages>
+				</Delphi.Personality>
+			</BorlandProject>
+			<ProjectFileVersion>12</ProjectFileVersion>
+		</ProjectExtensions>
+	</Project>

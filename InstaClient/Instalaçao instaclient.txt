@@ -1,0 +1,8 @@
+Passos de instalação: 
+
+1. Faça o download dos pacotes de Instant Client apropriadas para a sua plataforma. Todas as instalações exigem o pacote Basic. 
+
+2. Descompacte os pacotes em um único diretório, como "instantclient".
+3. Defina o caminho de carregamento de biblioteca em seu ambiente para o diretório na Etapa 2 ("instantclient"). Em muitas plataformas UNIX, LD_LIBRARY_PATH é a variável de ambiente adequado. No Windows, PATH deve ser usado.
+
+4. Inicie a aplicação e desfrutar.

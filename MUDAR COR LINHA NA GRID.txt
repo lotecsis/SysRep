@@ -1,0 +1,9 @@
+if (Column.Field.FieldName = 'CODCLI')  then
+  BEGIN
+    if DBGrid.DataSource.DataSet.FieldByName('CODCLI').Value > 2000 THEN
+       BEGIN
+        DBGrid.Canvas.Brush.Color:=clMaroon;
+        //DBGrid.DefaultDrawDataCell(Rect,DBGrid.Columns[Datacol].Field,state);
+        DBGrid.DefaultDrawColumnCell(Rect, DataCol, Column, State);
+       END;
+  END;

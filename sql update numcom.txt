@@ -1,0 +1,54 @@
+select e120obs.codemp,e120obs.codfil,e120obs.numped,e120obs.seqobs,e120obs.usu_numcom from e120obs
+inner join e120ped on e120ped.codemp = e120obs.codemp and
+                      e120ped.codfil = e120obs.codfil and
+                      e120ped.numped = e120obs.numped
+                      where
+                      e120ped.codrep = 14
+                      order by e120obs.usu_numcom desc
+
+
+select usu_t120ipd.usu_codemp,usu_t120ipd.usu_codfil,usu_t120ipd.usu_numped,usu_t120ipd.usu_seqipd,usu_t120ipd.usu_seqite,usu_t120ipd.usu_numcom from usu_t120ipd
+inner join e120ped on e120ped.codemp = usu_t120ipd.usu_codemp and
+                      e120ped.codfil = usu_t120ipd.usu_codfil and
+                      e120ped.numped = usu_t120ipd.usu_numped
+                      where
+                      e120ped.codrep = 14
+                      order by usu_t120ipd.usu_numcom desc
+
+
+select e120ipd.codemp,e120ipd.codfil,e120ipd.numped,e120ipd.seqipd,e120ipd.usu_numcom from e120ipd
+inner join e120ped on e120ped.codemp = e120ipd.codemp and
+                      e120ped.codfil = e120ipd.codfil and
+                      e120ped.numped = e120ipd.numped
+                      where
+                      e120ped.codrep = 14
+                      order by e120ipd.usu_numcom desc
+
+update (select e120obs.usu_numcom from e120obs
+        inner join e120ped on e120ped.codemp = e120obs.codemp and
+                      e120ped.codfil = e120obs.codfil and
+                      e120ped.numped = e120obs.numped
+                      where
+                      e120ped.codrep = 17)a
+                      set a.usu_numcom = 0
+
+update (select usu_t120ipd.usu_numcom from usu_t120ipd
+        inner join e120ped on e120ped.codemp = usu_t120ipd.usu_codemp and
+                      e120ped.codfil = usu_t120ipd.usu_codfil and
+                      e120ped.numped = usu_t120ipd.usu_numped
+                      where
+                      e120ped.codrep = 17)a
+                      set a.usu_numcom = 0
+
+update (select e120ipd.usu_numcom from e120ipd
+        inner join e120ped on e120ped.codemp = e120ipd.codemp and
+                      e120ped.codfil = e120ipd.codfil and
+                      e120ped.numped = e120ipd.numped
+                      where
+                      e120ped.codrep = 17)a
+                      set a.usu_numcom = 0
+
+update (select e120ped.usu_numcom from e120ped
+                               where
+                               e120ped.codrep = 17) a
+                               set a.usu_numcom = 0

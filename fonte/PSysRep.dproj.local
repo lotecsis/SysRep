@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2010/09/10 14:28:58.156.pas,D:\Meus documentos\RAD Studio\Projects\Unit1.pas=C:\SysRep\fonte\UPrincipal.pas</Transaction>
+    <Transaction>2010/09/10 14:28:58.156.dfm,D:\Meus documentos\RAD Studio\Projects\Unit1.dfm=C:\SysRep\fonte\UPrincipal.dfm</Transaction>
+    <Transaction>2010/09/10 14:29:11.328.dproj,D:\Meus documentos\RAD Studio\Projects\Project1.dproj=C:\SysRep\fonte\PSysRep.dproj</Transaction>
+    <Transaction>2010/09/10 14:33:21.234.pas,C:\SysRep\fonte\Unit1.pas=C:\SysRep\fonte\UDm1.pas</Transaction>
+    <Transaction>2010/09/10 14:33:21.234.dfm,C:\SysRep\fonte\Unit1.dfm=C:\SysRep\fonte\UDm1.dfm</Transaction>
+    <Transaction>2010/09/10 14:41:55.156.pas,C:\SysRep\fonte\Unit1.pas=C:\SysRep\fonte\ULogin.pas</Transaction>
+    <Transaction>2010/09/10 14:41:55.156.dfm,C:\SysRep\fonte\Unit1.dfm=C:\SysRep\fonte\ULogin.dfm</Transaction>
+    <Transaction>2010/10/15 14:10:20.693.pas,C:\SysRep\fonte\Unit1.pas=C:\SysRep\fonte\UConfig.pas</Transaction>
+    <Transaction>2010/10/15 14:10:20.693.dfm,C:\SysRep\fonte\Unit1.dfm=C:\SysRep\fonte\UConfig.dfm</Transaction>
+    <Transaction>2010/10/19 14:28:51.552.pas,C:\SysRep\fonte\Unit1.pas=C:\SysRep\fonte\UAtualiza.pas</Transaction>
+    <Transaction>2010/10/19 14:28:51.552.dfm,C:\SysRep\fonte\Unit1.dfm=C:\SysRep\fonte\UAtualiza.dfm</Transaction>
+    <Transaction>2010/11/16 17:23:32.771.pas,C:\SysRep\fonte\Unit1.pas=C:\SysRep\fonte\UPedido.pas</Transaction>
+    <Transaction>2010/11/16 17:23:32.771.dfm,C:\SysRep\fonte\Unit1.dfm=C:\SysRep\fonte\UPedido.dfm</Transaction>
+    <Transaction>2010/11/17 16:49:33.886.pas,C:\SysRep\fonte\UConsGeralNfEnt.pas=C:\SysRep\fonte\UConsGeral.pas</Transaction>
+    <Transaction>2010/11/17 16:49:33.886.dfm,C:\SysRep\fonte\UConsGeralNfEnt.dfm=C:\SysRep\fonte\UConsGeral.dfm</Transaction>
+    <Transaction>2010/11/19 16:27:53.964.pas,C:\SysRep\fonte\Unit1.pas=C:\SysRep\fonte\UAddProdPed.pas</Transaction>
+    <Transaction>2010/11/19 16:27:53.964.dfm,C:\SysRep\fonte\Unit1.dfm=C:\SysRep\fonte\UAddProdPed.dfm</Transaction>
+    <Transaction>2010/11/22 10:36:00.756.pas,C:\SysRep\fonte\Unit1.pas=C:\SysRep\fonte\UConsDerivacao.pas</Transaction>
+    <Transaction>2010/11/22 10:36:00.756.dfm,C:\SysRep\fonte\Unit1.dfm=C:\SysRep\fonte\UConsDerivacao.dfm</Transaction>
+    <Transaction>2010/11/25 17:12:12.363.pas,C:\SysRep\fonte\Unit1.pas=C:\SysRep\fonte\UAddCorProdPed.pas</Transaction>
+    <Transaction>2010/11/25 17:12:12.363.dfm,C:\SysRep\fonte\Unit1.dfm=C:\SysRep\fonte\UAddCorProdPed.dfm</Transaction>
+    <Transaction>2010/12/01 14:46:27.682.pas,C:\SysRep\fonte\Unit1.pas=C:\SysRep\fonte\UConsCoresProdPed.pas</Transaction>
+    <Transaction>2010/12/01 14:46:27.690.dfm,C:\SysRep\fonte\Unit1.dfm=C:\SysRep\fonte\UConsCoresProdPed.dfm</Transaction>
+    <Transaction>2010/12/03 13:57:50.798.pas,C:\SysRep\fonte\Unit1.pas=C:\SysRep\fonte\UObsPed.pas</Transaction>
+    <Transaction>2010/12/03 13:57:50.798.dfm,C:\SysRep\fonte\Unit1.dfm=C:\SysRep\fonte\UObsPed.dfm</Transaction>
+    <Transaction>2010/12/10 13:41:57.308.pas,C:\SysRep\fonte\Unit1.pas=C:\SysRep\fonte\UEnviaPedidos.pas</Transaction>
+    <Transaction>2010/12/10 13:41:57.308.dfm,C:\SysRep\fonte\Unit1.dfm=C:\SysRep\fonte\UEnviaPedidos.dfm</Transaction>
+    <Transaction>2011/02/07 14:19:23.139.pas,C:\SysRep\fonte\Unit1.pas=C:\SysRep\fonte\UConsultaPedido.pas</Transaction>
+    <Transaction>2011/02/07 14:19:23.139.dfm,C:\SysRep\fonte\Unit1.dfm=C:\SysRep\fonte\UConsultaPedido.dfm</Transaction>
+    <Transaction>2011/03/22 14:37:02.641.pas,C:\SysRep\fonte\Unit1.pas=C:\SysRep\fonte\UDmOra.pas</Transaction>
+    <Transaction>2011/03/22 14:37:02.641.dfm,C:\SysRep\fonte\Unit1.dfm=C:\SysRep\fonte\UDmOra.dfm</Transaction>
+    <Transaction>2011/04/26 09:10:55.684.pas,C:\SysRep\fonte\Unit1.pas=C:\SysRep\fonte\UAcompanhamentoPedidos.pas</Transaction>
+    <Transaction>2011/04/26 09:10:55.684.dfm,C:\SysRep\fonte\Unit1.dfm=C:\SysRep\fonte\UAcompanhamentoPedidos.dfm</Transaction>
+    <Transaction>2011/04/27 09:01:08.314.pas,C:\SysRep\fonte\Unit1.pas=C:\SysRep\fonte\UResumoPreCargas.pas</Transaction>
+    <Transaction>2011/04/27 09:01:08.314.dfm,C:\SysRep\fonte\Unit1.dfm=C:\SysRep\fonte\UResumoPreCargas.dfm</Transaction>
+    <Transaction>2011/05/17 15:05:38.876.pas,C:\SysRep\fonte\Unit1.pas=C:\SysRep\fonte\UDmRave.pas</Transaction>
+    <Transaction>2011/05/17 15:05:38.876.dfm,C:\SysRep\fonte\Unit1.dfm=C:\SysRep\fonte\UDmRave.dfm</Transaction>
+    <Transaction>2011/05/27 16:00:25.307.pas,C:\SysRep\fonte\Unit1.pas=C:\SysRep\fonte\UInformacoesClientes.pas</Transaction>
+    <Transaction>2011/05/27 16:00:25.307.dfm,C:\SysRep\fonte\Unit1.dfm=C:\SysRep\fonte\UInformacoesClientes.dfm</Transaction>
+    <Transaction>2011/05/31 15:07:54.058.pas,C:\SysRep\fonte\Unit1.pas=C:\SysRep\fonte\URelacaoCobranca.pas</Transaction>
+    <Transaction>2011/05/31 15:07:54.058.dfm,C:\SysRep\fonte\Unit1.dfm=C:\SysRep\fonte\URelacaoCobranca.dfm</Transaction>
+    <Transaction>2011/06/01 16:49:33.341.pas,C:\SysRep\fonte\Unit1.pas=C:\SysRep\fonte\UVisuTabPreco.pas</Transaction>
+    <Transaction>2011/06/01 16:49:33.341.dfm,C:\SysRep\fonte\Unit1.dfm=C:\SysRep\fonte\UVisuTabPreco.dfm</Transaction>
+    <Transaction>2012/10/10 08:22:52.509.pas,C:\SysRep\fonte\Unit1.pas=C:\SysRep\fonte\UDmMySql.pas</Transaction>
+    <Transaction>2012/10/10 08:22:52.509.dfm,C:\SysRep\fonte\Unit1.dfm=C:\SysRep\fonte\UDmMySql.dfm</Transaction>
+    <Transaction>2013/08/01 17:03:36.494.pas,C:\SysRep\fonte\Unit1.pas=C:\SysRep\fonte\UDmR.pas</Transaction>
+    <Transaction>2013/08/01 17:03:36.494.dfm,C:\SysRep\fonte\Unit1.dfm=C:\SysRep\fonte\UDmR.dfm</Transaction>
+    <Transaction>2014/01/27 09:10:43.354.pas,C:\SysRep\fonte\Unit1.pas=C:\SysRep\fonte\UDmFireRep.pas</Transaction>
+    <Transaction>2014/01/27 09:10:43.354.dfm,C:\SysRep\fonte\Unit1.dfm=C:\SysRep\fonte\UDmFireRep.dfm</Transaction>
+    <Transaction>2017/12/13 10:12:55.382.pas,C:\SysRep\fonte\UDmMySql.pas=</Transaction>
+    <Transaction>2017/12/13 10:12:55.382.dfm,C:\SysRep\fonte\UDmMySql.dfm=</Transaction>
+  </Transactions>
+</BorlandProject>

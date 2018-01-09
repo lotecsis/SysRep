@@ -1,0 +1,108 @@
+Lendo e gravando arquivos de texto em Delphi
+Existem vários métodos em Delphi para gravar arquivos texto a partir de informações gravadas em bases de dados ou para ler arquivos texto e armazená-los em bases de dados. Esta dica apresenta um destes métodos: o uso de TextFiles.
+
+TextFile é um tipo de dado pré-definido no Delphi e corresponde ao tipo Text do Turbo Pascal e do Object Pascal.
+
+Inicialmente para acessar um arquivo de texto, você precisa definir uma variável tipo TextFile, no local que você achar mais apropriado, da seguinte forma:
+
+var arq: TextFile; 
+
+
+Vamos precisar também de uma variável tipo string para armazenar cada linha lida do arquivo:
+
+ var linha: String; 
+
+
+Antes de se iniciar a leitura do arquivo, precisamos associar a variavel TextFile com um arquivo fisicamente armazenado no disco:
+
+AssignFile ( arq, 'C:AUTOEXEC.BAT' ); 
+Reset ( arq ); 
+
+
+
+A rotina AssignFile faz a associação enquanto Reset abre efetivamente o arquivo para leitura. AssignFile corresponde à Assign do Turbo Pascal. Em seguida é necessário fazer uma leitura ao arquivo, para isto utilizaremos a procedure ReadLn:
+
+ReadLn ( arq, linha ); 
+
+
+
+O comando acima lê apenas uma linha de cada vez, assim precisamos de um loop para efetuar várias leituras até que o arquivo acabe. Para verificar o fim do arquivo, utilizaremos a função Eof:
+
+while not Eof ( arq ) do 
+
+
+
+Agora uma rotina quase completa para fazer a leitura de um arquivo texto. Esta rotina recebe como parâmetro o nome do arquivo que será lido:
+
+procedure percorreArquivoTexto ( nomeDoArquivo: String ); 
+var arq: TextFile; 
+linha: String; 
+begin 
+AssignFile ( arq, nomeDoArquivo ); 
+Reset ( arq ); 
+ReadLn ( arq, linha ); 
+while not Eof ( arq ) do 
+begin 
+{ Processe a linha lida aqui. } 
+{ Para particionar a linha lida em pedaços, use a função Copy. } 
+ReadLn ( arq, linha ); 
+end; 
+CloseFile ( arq ); 
+end; 
+
+
+
+E também uma rotina quase completa para gravação de um arquivo texto. Esta rotina recebe como parâmetro o nome do arquivo que será gravado e uma tabela (TTable) de onde os dados serão lidos:
+
+procedure gravaArquivoTexto ( nomeDoArquivo: String; tabela: TTable ); 
+var arq: TextFile; 
+linha: String; 
+begin 
+AssignFile ( arq, nomeDoArquivo ); 
+Rewrite ( arq ); 
+tabela.First; 
+while not tabela.Eof do 
+begin 
+Write ( arq, AjustaStr ( tabela.FieldByName ( 'Nome' ).AsString, 30 ) ); 
+Write ( arq, FormatFloat ( '00000000.00', tabela.FieldByName ( 'Salario' ).AsFloat ) ); 
+WriteLn ( arq ); 
+tabela.Next; 
+end; 
+CloseFile ( arq ); 
+end; 
+
+
+
+Note nesta segunda rotina, a substituição de Reset por Rewrite logo após o AssignFile. Rewrite abre o arquivo para escrita, destruindo tudo que houver lá anteriormente .
+
+Note também o uso de Write e WriteLn para gravar dados no arquivo texto.
+
+Finalmente note o uso de AjustaStr e FormatFloat para garantir que campos string e numericos sejam gravados com um número fixo de caracteres. FormatFloat é uma rotina do próprio Delphi enquanto AjustaStr está definida abaixo:
+
+ function AjustaStr ( str: String; tam: Integer ): String; 
+begin 
+while Length ( str ) < tam do 
+str := str + ' '; 
+if Length ( str ) > tam then 
+str := Copy ( str, 1, tam ); 
+Result := str; 
+end; 
+
+
+
+O uso da função AjustaStr é fundamental quando você estiver gravando arquivos texto com registros de tamanho fixo a partir de bases de dados Paradox que usualmente não preenchem campos string com espaços no final.
+
+<font size=1 color=green>@ José J. Carvalho Júnior</font> 
+
+
+
+==============
+
+var f:TextFile; Linha:String;
+begin
+ AssignFile(f, 'Caminho do Arquivo.txt');
+ Reset(f);
+ While not Eof(f) do
+   Readln(f, Linha);
+ CloseFile(f);
+end;
