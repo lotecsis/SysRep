@@ -2,7 +2,7 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "SysRep"
-#define MyAppVersion "4.0"
+#define MyAppVersion "6.0"
 #define MyAppPublisher "Lider Lar Estofados e Colchões"
 #define MyAppURL "http://www.liderlar.com.br"
 #define MyAppExeName "PSysRep.exe"
@@ -35,13 +35,13 @@ Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{
 Name: "quicklaunchicon"; Description: "{cm:CreateQuickLaunchIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked; OnlyBelowVersion: 0,6.1
 
 [Files]
-Source: "C:\SysRep\fonte\PSysRep.exe"; DestDir: "{app}"; Flags: ignoreversion
+;Source: "C:\SysRep\fonte\PSysRep.exe"; DestDir: "{app}"; Flags: ignoreversion
 Source: "C:\SysRep\fonte\PSysRep.exe"; DestDir: "{app}"; Flags: ignoreversion
 Source: "C:\SysRep\ArqFtp\*"; DestDir: "{app}\ArqFtp"; Flags: ignoreversion recursesubdirs createallsubdirs
 Source: "C:\SysRep\ArqPed\*"; DestDir: "{app}\ArqPed"; Flags: ignoreversion recursesubdirs createallsubdirs
 Source: "C:\SysRep\banco\*"; DestDir: "{app}\banco"; Flags: ignoreversion recursesubdirs createallsubdirs
 Source: "C:\SysRep\conf\*"; DestDir: "{app}\conf"; Flags: ignoreversion recursesubdirs createallsubdirs
-Source: "C:\SysRep\ftproot\*"; DestDir: "{app}\ftproot"; Flags: ignoreversion recursesubdirs createallsubdirs
+;Source: "C:\SysRep\ftproot\*"; DestDir: "{app}\ftproot"; Flags: ignoreversion recursesubdirs createallsubdirs
 Source: "C:\SysRep\Firebird-2.0.3.12981-1-Win32.exe"; DestDir: "{app}"; Flags: ignoreversion
 Source: "C:\SysRep\FB\firebird.conf"; DestDir: "{app}"; Flags: ignoreversion
 Source: "C:\SysRep\FB\gds32.dll"; DestDir: "{app}"; Flags: ignoreversion

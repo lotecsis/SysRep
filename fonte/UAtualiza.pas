@@ -4198,7 +4198,7 @@ begin
 
       DmFireRep.ConsE081Itp.Close;
       DmFireRep.ConsE081Itp.Open;
-      DmFireRep.ConsE081Itp.Prior;
+      DmFireRep.ConsE081Itp.Last;
       DmFireRep.ConsE081Itp.First;
 
       StatusBar1.Panels[1].Text := '';
@@ -4211,6 +4211,7 @@ begin
      vnQtdCpgg := DmFireRep.ConsE081Tab.RecordCount;
      statusTabPreco.MaxValue := vnQtdCpgg;
      statusTabPreco.Progress := 0;
+
      Application.ProcessMessages;
 
      while not DmFireRep.ConsE081Tab.Eof do
@@ -4250,66 +4251,44 @@ begin
        {*******************************************************
                  grava os produtos da tabela de preço
        ********************************************************}
+       Dm1.ConsSql.Close;
+       Dm1.ConsSql.SQL.Clear;
+       Dm1.ConsSql.SQL.Add('delete from e081itp');
+       Dm1.ConsSql.ExecSQL;
+
        vnQtdCpgg := DmFireRep.ConsE081Itp.RecordCount;
        statusTabPreco.MaxValue := vnQtdCpgg;
        statusTabPreco.Progress := 0;
+       Dm1.CadE081Itp.Open;
        Application.ProcessMessages;
        while not DmFireRep.ConsE081Itp.Eof do
            begin
-              Dm1.CadE081Itp.Close;
-              Dm1.CadE081Itp.ParamByName('codemp').Value := DmFireRep.ConsE081ItpCODEMP.Value;
-              Dm1.CadE081Itp.ParamByName('codtpr').Value := DmFireRep.ConsE081ItpCODTPR.Value;
-              Dm1.CadE081Itp.ParamByName('codpro').Value := DmFireRep.ConsE081ItpCODPRO.Value;
-              Dm1.CadE081Itp.ParamByName('codder').Value := DmFireRep.ConsE081ItpCODDER.Value;
-              Dm1.CadE081Itp.ParamByName('codusu').Value := FPrincipal.vnCodusu;
-              Dm1.CadE081Itp.Open;
-              if Dm1.CadE081Itp.IsEmpty then
-                begin//11
-                  Dm1.CadE081Itp.Insert;
-                  Dm1.CadE081ItpCODEMP.Value := DmFireRep.ConsE081ItpCODEMP.Value;
-                  Dm1.CadE081ItpCODTPR.Value := DmFireRep.ConsE081ItpCODTPR.Value;
-                  Dm1.CadE081ItpCODPRO.Value := DmFireRep.ConsE081ItpCODPRO.Value;
-                  Dm1.CadE081ItpCODDER.AsString := DmFireRep.ConsE081ItpCODDER.Value;
-                  Dm1.CadE081ItpCODUSU.Value := FPrincipal.vnCodusu;
-                  Dm1.CadE081ItpDESPRO.Value := DmFireRep.ConsE081ItpDESPRO.Value;
-                  Dm1.CadE081ItpPREBAS.Value := DmFireRep.ConsE081ItpPREBAS.Value;
-                  Dm1.CadE081ItpTOLMAI.Value := DmFireRep.ConsE081ItpTOLMAI.Value;
-                  Dm1.CadE081ItpTOLMEN.Value := DmFireRep.ConsE081ItpTOLMEN.Value;
-                  Dm1.CadE081ItpVLRMAI.Value := DmFireRep.ConsE081ItpVLRMAI.Value;
-                  Dm1.CadE081ItpVLRMEN.Value := DmFireRep.ConsE081ItpVLRMEN.Value;
-                  if (((FPrincipal.vnCodRep = 4) or (FPrincipal.vnCodRep = 6)) and (DmFireRep.ConsE081ItpCODAGC.Value = 'ESTOF')) then //se for esses representantes aumenta o valor do produto
-                      begin
-                        Dm1.CadE081ItpPREBAS.Value := Dm1.CadE081ItpPREBAS.Value + (Dm1.CadE081ItpPREBAS.Value * 0.0189);
-                        Dm1.CadE081ItpVLRMAI.Value := Dm1.CadE081ItpVLRMAI.Value + (Dm1.CadE081ItpVLRMAI.Value * 0.0189);
-                        Dm1.CadE081ItpVLRMEN.Value := Dm1.CadE081ItpVLRMEN.Value + (Dm1.CadE081ItpVLRMEN.Value * 0.0189);
-                      end;
-                  Dm1.CadE081ItpSITREG.Value := DmFireRep.ConsE081ItpSITREG.Value;
-                  Dm1.CadE081ItpDATINI.Value := DmFireRep.ConsE081ItpDATINI.Value;
-                  Dm1.CadE081ItpDATFIM.Value := DmFireRep.ConsE081ItpDATFIM.Value;
-                  Dm1.CadE081Itp.Post;
-                  Dm1.IBDTransacao.CommitRetaining;
-                end//11
-              else
-                begin//2
-                  Dm1.CadE081Itp.Edit;
-                  Dm1.CadE081ItpDESPRO.Value := DmFireRep.ConsE081ItpDESPRO.Value;
-                  Dm1.CadE081ItpPREBAS.Value := DmFireRep.ConsE081ItpPREBAS.Value;
-                  Dm1.CadE081ItpTOLMAI.Value := DmFireRep.ConsE081ItpTOLMAI.Value;
-                  Dm1.CadE081ItpTOLMEN.Value := DmFireRep.ConsE081ItpTOLMEN.Value;
-                  Dm1.CadE081ItpVLRMAI.Value := DmFireRep.ConsE081ItpVLRMAI.Value;
-                  Dm1.CadE081ItpVLRMEN.Value := DmFireRep.ConsE081ItpVLRMEN.Value;
-                  Dm1.CadE081ItpSITREG.Value := DmFireRep.ConsE081ItpSITREG.Value;
-                  Dm1.CadE081ItpDATINI.Value := DmFireRep.ConsE081ItpDATINI.Value;
-                  Dm1.CadE081ItpDATFIM.Value := DmFireRep.ConsE081ItpDATFIM.Value;
-                  if (((FPrincipal.vnCodRep = 4) or (FPrincipal.vnCodRep = 6)) and (DmFireRep.ConsE081ItpCODAGC.Value = 'ESTOF')) then //se for esses representantes aumenta o valor do produto
-                      begin
-                        Dm1.CadE081ItpPREBAS.Value := Dm1.CadE081ItpPREBAS.Value + (Dm1.CadE081ItpPREBAS.Value * 0.0189);
-                        Dm1.CadE081ItpVLRMAI.Value := Dm1.CadE081ItpVLRMAI.Value + (Dm1.CadE081ItpVLRMAI.Value * 0.0189);
-                        Dm1.CadE081ItpVLRMEN.Value := Dm1.CadE081ItpVLRMEN.Value + (Dm1.CadE081ItpVLRMEN.Value * 0.0189);
-                      end;
-                  Dm1.CadE081Itp.Post;
-                  Dm1.IBDTransacao.CommitRetaining;
-                end;//12
+
+              Dm1.CadE081Itp.Insert;
+              Dm1.CadE081ItpCODEMP.Value := DmFireRep.ConsE081ItpCODEMP.Value;
+              Dm1.CadE081ItpCODTPR.Value := DmFireRep.ConsE081ItpCODTPR.Value;
+              Dm1.CadE081ItpCODPRO.Value := DmFireRep.ConsE081ItpCODPRO.Value;
+              Dm1.CadE081ItpCODDER.AsString := DmFireRep.ConsE081ItpCODDER.Value;
+              Dm1.CadE081ItpCODUSU.Value := FPrincipal.vnCodusu;
+              Dm1.CadE081ItpDESPRO.Value := DmFireRep.ConsE081ItpDESPRO.Value;
+              Dm1.CadE081ItpPREBAS.Value := DmFireRep.ConsE081ItpPREBAS.Value;
+              Dm1.CadE081ItpTOLMAI.Value := DmFireRep.ConsE081ItpTOLMAI.Value;
+              Dm1.CadE081ItpTOLMEN.Value := DmFireRep.ConsE081ItpTOLMEN.Value;
+              Dm1.CadE081ItpVLRMAI.Value := DmFireRep.ConsE081ItpVLRMAI.Value;
+              Dm1.CadE081ItpVLRMEN.Value := DmFireRep.ConsE081ItpVLRMEN.Value;
+              if (((FPrincipal.vnCodRep = 4) or (FPrincipal.vnCodRep = 6)) and (DmFireRep.ConsE081ItpCODAGC.Value = 'ESTOF')) then //se for esses representantes aumenta o valor do produto
+                  begin
+                    Dm1.CadE081ItpPREBAS.Value := Dm1.CadE081ItpPREBAS.Value + (Dm1.CadE081ItpPREBAS.Value * 0.0189);
+                    Dm1.CadE081ItpVLRMAI.Value := Dm1.CadE081ItpVLRMAI.Value + (Dm1.CadE081ItpVLRMAI.Value * 0.0189);
+                    Dm1.CadE081ItpVLRMEN.Value := Dm1.CadE081ItpVLRMEN.Value + (Dm1.CadE081ItpVLRMEN.Value * 0.0189);
+                  end;
+              Dm1.CadE081ItpSITREG.Value := DmFireRep.ConsE081ItpSITREG.Value;
+              Dm1.CadE081ItpDATINI.Value := DmFireRep.ConsE081ItpDATINI.Value;
+              Dm1.CadE081ItpDATFIM.Value := DmFireRep.ConsE081ItpDATFIM.Value;
+              Dm1.CadE081Itp.Post;
+              Dm1.IBDTransacao.CommitRetaining;
+
+
 
              statusTabPreco.Progress := statusTabPreco.Progress + 1;
              Application.ProcessMessages;
