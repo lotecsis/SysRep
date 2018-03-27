@@ -222,7 +222,7 @@ begin
  { if IsGlobalOffline = False then
      BEGIN
        //ShowMessage('Você não está conectado à Internet.')
-     end;}
+     end;//}
 
   if IsGlobalOffline = TRUE then
      BEGIN
