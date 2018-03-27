@@ -351,7 +351,7 @@ begin
       vnQtdDia := DaysBetween(Date,Dm1.ConsSql.FieldByName('DATATU').AsDateTime);
       if vnQtdDia >= 3 then
          begin
-            btnVerificaConNet.Click;
+           // btnVerificaConNet.Click;
          end;
     end;
 
