@@ -218,7 +218,7 @@ procedure TFPrincipal.btnVerificaConNetClick(Sender: TObject);
 var estado : Dword;
 begin
   CONECTADO;
-
+    //
  { if IsGlobalOffline = False then
      BEGIN
        //ShowMessage('Você não está conectado à Internet.')
